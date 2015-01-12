@@ -396,6 +396,8 @@ NSString static *const kYTPlayerAdUrlRegexPattern = @"^http(s)://pubads.g.double
     return NO;
   } else if ([request.URL.scheme isEqual: @"http"] || [request.URL.scheme isEqual:@"https"]) {
     return [self handleHttpNavigationToUrl:request.URL];
+  } else if ([request.URL.host isEqual: @"pubads.g.doubleclick.net"]) {
+      return NO;
   }
   return YES;
 }
